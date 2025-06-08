@@ -1,0 +1,15 @@
+/Users/mahacmagomedov/Desktop/ProjectDdip/src/main/java/org/example/export/JsonVacancyExporter.java
+/Users/mahacmagomedov/Desktop/ProjectDdip/src/main/java/org/example/ui/ConsoleUI.java
+/Users/mahacmagomedov/Desktop/ProjectDdip/src/main/java/org/example/model/Vacancy.java
+/Users/mahacmagomedov/Desktop/ProjectDdip/src/main/java/org/example/parser/VacancyParser.java
+/Users/mahacmagomedov/Desktop/ProjectDdip/src/main/java/org/example/service/VacancyParserService.java
+/Users/mahacmagomedov/Desktop/ProjectDdip/src/main/java/org/example/export/VacancyExporter.java
+/Users/mahacmagomedov/Desktop/ProjectDdip/src/main/java/org/example/ui/VacancyFormatter.java
+/Users/mahacmagomedov/Desktop/ProjectDdip/src/main/java/org/example/repository/VacancyRepository.java
+/Users/mahacmagomedov/Desktop/ProjectDdip/src/main/java/org/example/config/Config.java
+/Users/mahacmagomedov/Desktop/ProjectDdip/src/main/java/org/example/parser/HhVacancyParser.java
+/Users/mahacmagomedov/Desktop/ProjectDdip/src/main/java/org/example/export/HtmlVacancyExporter.java
+/Users/mahacmagomedov/Desktop/ProjectDdip/src/main/java/org/example/db/DatabaseManager.java
+/Users/mahacmagomedov/Desktop/ProjectDdip/src/main/java/org/example/parser/SuperJobVacancyParser.java
+/Users/mahacmagomedov/Desktop/ProjectDdip/src/main/java/org/example/export/CsvVacancyExporter.java
+/Users/mahacmagomedov/Desktop/ProjectDdip/src/main/java/org/example/Main.java

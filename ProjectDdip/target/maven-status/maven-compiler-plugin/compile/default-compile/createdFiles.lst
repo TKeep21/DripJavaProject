@@ -1,0 +1,15 @@
+org/example/export/HtmlVacancyExporter.class
+org/example/Main.class
+org/example/db/DatabaseManager.class
+org/example/export/VacancyExporter.class
+org/example/export/JsonVacancyExporter.class
+org/example/model/Vacancy.class
+org/example/repository/VacancyRepository.class
+org/example/parser/VacancyParser.class
+org/example/config/Config.class
+org/example/ui/VacancyFormatter.class
+org/example/export/CsvVacancyExporter.class
+org/example/parser/HhVacancyParser.class
+org/example/service/VacancyParserService.class
+org/example/parser/SuperJobVacancyParser.class
+org/example/ui/ConsoleUI.class

@@ -1,0 +1,5 @@
+org/example/ui/VacancyFormatterTest.class
+org/example/parser/HhVacancyParserTest.class
+org/example/repository/VacancyRepositoryTest.class
+org/example/service/VacancyParserServiceTest.class
+org/example/parser/SuperJobVacancyParserTest.class
