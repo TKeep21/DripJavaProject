@@ -29,9 +29,8 @@ public class VacancyRepository {
         this.dbManager = dbManager;
     }
 
-    /**
-     * Проверяет, существует ли вакансия с данным URL.
-     */
+    // Проверяет, существует ли вакансия с данным URL.
+     
     public boolean existsByUrl(String url) throws SQLException {
         String sql = "SELECT COUNT(*) FROM vacancies WHERE url = ?";
         try (Connection conn = dbManager.getConnection();
@@ -54,9 +53,8 @@ public class VacancyRepository {
         return findByField("company", company);
     }
 
-    /**
-     * Поиск вакансий по ключевому слову в title или description.
-     */
+    //Поиск вакансий по ключевому слову в title или description.
+     
     public List<Vacancy> searchByKeyword(String keyword) throws SQLException {
         return search("(title LIKE ? OR description LIKE ?)", "%" + keyword + "%", "%" + keyword + "%");
     }
@@ -182,9 +180,8 @@ public class VacancyRepository {
         }
     }
 
-    /**
-     * Находит вакансии, у которых salary_from ≥ заданного minSalary.
-     */
+    //Находит вакансии, у которых salary_from ≥ заданного minSalary.
+     
     public List<Vacancy> findBySalaryFromGreaterEqual(int minSalary) throws SQLException {
         String sql = "SELECT * FROM vacancies WHERE salary_from >= ?";
         try (Connection conn = dbManager.getConnection();
@@ -197,9 +194,9 @@ public class VacancyRepository {
         }
     }
 
-    /**
-     * Находит вакансии, у которых salary_to ≤ заданного maxSalary.
-     */
+    
+      //Находит вакансии, у которых salary_to ≤ заданного maxSalary.
+     
     public List<Vacancy> findBySalaryToLessEqual(int maxSalary) throws SQLException {
         String sql = "SELECT * FROM vacancies WHERE salary_to <= ?";
         try (Connection conn = dbManager.getConnection();
@@ -212,9 +209,9 @@ public class VacancyRepository {
         }
     }
 
-    /**
-     * Находит вакансии, у которых salary_from ≥ minSalary и salary_to ≤ maxSalary.
-     */
+    
+      //Находит вакансии, у которых salary_from ≥ minSalary и salary_to ≤ maxSalary.
+     
     public List<Vacancy> findBySalaryBetween(int minSalary, int maxSalary) throws SQLException {
         String sql = "SELECT * FROM vacancies WHERE salary_from >= ? AND salary_to <= ?";
         try (Connection conn = dbManager.getConnection();
@@ -243,8 +240,8 @@ public class VacancyRepository {
     }
 
     /**
-     * Преобразует ResultSet в List<Vacancy>. Читает все колонки, включая новые:
-     * salary_from, salary_to, currency, work_schedule, specialization.
+     * Преобразует ResultSet в List<Vacancy>. Читает все колонки:
+     * salary_from, salary_to, currency, work_schedule и тд
      */
     private List<Vacancy> mapResultSet(ResultSet rs) throws SQLException {
         List<Vacancy> list = new ArrayList<>();
@@ -343,7 +340,7 @@ public class VacancyRepository {
             ps.setLong(1, id);
             try (ResultSet rs = ps.executeQuery()) {
                 if (rs.next()) {
-                    // Воспользоваться mapResultSet, но он ожидает ResultSet с несколькими.
+
                     Vacancy v = new Vacancy();
                     v.setId(rs.getLong("id"));
                     v.setTitle(rs.getString("title"));
@@ -382,9 +379,7 @@ public class VacancyRepository {
             ps.executeUpdate();
         }
     }
-    /**
-     * Логирует изменение вакансии в таблицу vacancy_changes.
-     */
+     
     public void logChange(
             Long vacancyId,
             String url,
@@ -568,9 +563,7 @@ public class VacancyRepository {
         }
     }
 
-    /**
-     * Возвращает список вакансий, отсортированный по городу в алфавитном порядке.
-     */
+     
     public List<Vacancy> findAllOrderByCity() throws SQLException {
         String sql = "SELECT * FROM vacancies WHERE is_active = true " +
                 "ORDER BY city ASC NULLS LAST";
@@ -583,9 +576,7 @@ public class VacancyRepository {
 
 
 
-    /**
-     * Деактивирует вакансии по списку URL.
-     */
+    //Деактивирует вакансии по списку URL.
     public void deactivateByUrls(List<String> urls) throws SQLException {
         if (urls == null || urls.isEmpty()) {
             return;
